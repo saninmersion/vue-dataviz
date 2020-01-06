@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- Sidebar -->
+    <aside>
+      <router-link to="/bar-graph">Bar Graph</router-link>
+      <router-link to="/pie-chart">Pie Chart</router-link>
+    </aside>
+
+    <!-- Main -->
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  components: {}
+};
 </script>
 
-<style>
+<style lang="scss">
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+
+  aside {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    align-items: center;
+    background: #42b983;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  main {
+    flex: 1;
+    overflow: auto;
+    padding: 50px 20px;
+  }
 }
 </style>
