@@ -130,6 +130,7 @@ export default {
         return d[this.yKey] || 1;
       });
     },
+
     dataMin() {
       return min(this.barsData, d => {
         return d[this.yKey];
@@ -145,14 +146,17 @@ export default {
           })
         );
     },
+
     yScale() {
       return scaleLinear()
         .rangeRound([this.actual.height, 0])
         .domain([this.dataMin > 0 ? 0 : this.dataMin, this.dataMax]);
     },
+
     height() {
       return this.width / 1.61803398875;
     },
+
     actual() {
       return {
         width: this.width - this.margins.left - this.margins.right,
